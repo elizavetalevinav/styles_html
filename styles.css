@@ -1,0 +1,80 @@
+:root{
+    --bg: #0d0d0d; /* фон сайта */
+    --panel: #11131a; /* фон карточек */
+    --text: #e8e8ea; /* основной цвет текста */
+    --muted: #888; /* второстепенный текст типа подписи */
+    --line: rgba(255, 255, 255, 0.1); /* тонкие границы, линия */
+    --accent: #d7c6ff; /* акцент */
+    --accent2: #9fe7ff; /* второй акцент */
+    --radius: 18px; /* скругление блоков */
+}
+*{box-sizing: border-box;}
+.header{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+}
+
+
+
+
+
+
+
+
+
+
+body{
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.5;
+    
+}
+a{ color: inherit; text-decoration: none; }
+
+.container{
+    width: min(1060px, calc(100% - 40px));
+    margin: 0 auto;
+
+}
+
+.header__inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 0;
+    gap: 16px;
+}
+
+
+
+.meta {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+}
+.meta li {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px 12px;
+    border: 1px solid #eee;
+    border-radius: 14px;
+    background: rgba(0, 0, 0, 0.18);
+}
+
+
+.meta__label {
+    color: var(--muted);
+}
+
+.meta__value {
+    font-weight: 600;
+}
