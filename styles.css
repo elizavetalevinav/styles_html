@@ -34,6 +34,33 @@ body{
     line-height: 1.5;
     
 }
+.header__inner{
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 0;
+    gap: 16px;
+}
+.meta{
+     margin-top: 60px;
+     display: flex;
+     align-self: flex-start;
+}
+@media (max-width: 900px){
+    .header__inner{
+        grid-template-columns: 1fr;
+    }
+    .meta{
+        grid-template-columns: 1fr;
+    }
+}
+.hero__actions{
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
 a{ color: inherit; text-decoration: none; }
 
 .container{
@@ -44,33 +71,22 @@ a{ color: inherit; text-decoration: none; }
 
 }
 
-.header__inner{
-    display: grid;
-    grid-template-columns: 1fr 420px;
-    gap: 24px;
-    align-items: start;
-    justify-content: space-between;
-    padding: 14px 0;
-    gap: 16px;
-}
+
 .photo {
-    width: 100%;
-    height: 420px;
+    width: 420px;
+    height: 520px;
     border-radius: 18px;
+    overflow: hidden;
     border: 1px solid var(--line);
-    background: rgba(255, 255, 255, .25);
-    display: grid;
-    place-items: center;
-    color: rgba(255, 255, 255, .55);
-}
-@media (max-width: 900px) {
-    .hero__inner {
-        grid-template-columns: 1fr;
+    display: block;}
+.photo img{
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
     }
-    .photo {
-        height: 320px;
-    }
-}
+
+
 
 .logo {
     font-family: "Playfair Display", serif;
@@ -99,11 +115,19 @@ a{ color: inherit; text-decoration: none; }
 .hero{
     padding: 48px 0 28px;
 }
-.header__inner{
+.hero__inner{
     display: grid;
-    grid-template-columns:1.25fr .95fr;
+    grid-template-columns: 420px 1fr;
     gap: 26px;
-    align-items: center;
+    align-items: start;
+}
+@media (max-width: 900px) {
+    .hero__inner {
+        grid-template-columns: 1fr;
+    }
+    .photo {
+        height: 320px;
+    }
 }
 .badge {
     background: rgba(255, 255, 255, 0.04);
@@ -124,12 +148,7 @@ h1 {
     color: var(--muted);
     max-width: 56ch;
 }
-.hero__actions{
-    display: flex;
-    gap: 12px;
-    margin-bottom: 16px;
-    flex-wrap: wrap;
-}
+
 .btn{
     display: inline-flex;
     align-items: center;
@@ -197,28 +216,13 @@ margin: 20px;
     background: var(--panel);
     border: 1px solid var(--line);
 }
-.photo{
-    height: 320px;
-    border-radius: calc(var(--radius) * 6px);
-    border: 1px dashed rgba(255, 255, 255, .25);
-    background: rgba(255, 255, 255, .25);
-    display: grid;
-    place-items: center;
-    color: rgba(255, 255, 255, .55);
-}
+
 .caption{
     margin: 10px 0 0;
     color: var(--muted);
     font-size: 14px;
 }
-@media (max-width: 900px){
-    .header__inner{
-        grid-template-columns: 1fr;
-    }
-    .meta{
-        grid-template-columns: 1fr;
-    }
-}
+
 .section {
     padding: 34px 0;
 }
@@ -301,6 +305,20 @@ margin: 20px;
 
 .contact{display: flex; gap: 12px; flex-wrap: wrap; margin-top: 12px;
 }
+.gallery{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+    }
+    .gallery img{
+        width: 100%;
+        height: 220px;
+        border-radius: 16px;
+        border: 1px solid var(--line);
+        object-fit: cover;
+        display: block;
+    }
+
 @media (max-width: 900px){
     .grid--2 {
         grid-template-columns: 1fr;
@@ -313,3 +331,4 @@ margin: 20px;
     .gallery {
         grid-template-columns: 1fr;
     }
+    
